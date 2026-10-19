@@ -98,7 +98,7 @@ Each case has one pass condition, written before use. Once a case has been used 
 | Test | Part | Owner | Cases |
 |---|---|---|---|
 | TEST-OER-OERL v1 | Operations Event Register Lead | the Cell carrying `[ORG]HOAC-TM` | 5, 14, 37, 38, 40, 42, 50 |
-| TEST-OER-OERCS v1 | Chief of Staff | `[ORG]CELL-OERL` | 1, 6, 8, 9, 11, 24, 25, 30, 31, 37, 45, 47, 49, 51 to 60 |
+| TEST-OER-COSOER v1 | Chief of Staff | `[ORG]CELL-OERL` | 1, 6, 8, 9, 11, 24, 25, 30, 31, 37, 45, 47, 49, 51 to 60 |
 | TEST-OER-OERIC v1 | Integrity Checker | `[ORG]CELL-OERL` | 3, 13, 19, 22, 35, 36 |
 | TEST-OER-OERCR v1 | Capture and Registration Pod | `[ORG]CELL-OERL` | 2, 3, 4, 17, 18, 19, 20, 21, 22, 39 |
 | TEST-OER-OERCC v1 | Capture Clerk | `[ORG]CELL-OERL` | 3, 4, 17, 18, 19, 22 |

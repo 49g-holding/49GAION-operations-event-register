@@ -19,6 +19,8 @@ cards/bots/, as generated copies. Then it checks:
   - codes: every Pod and Cell code is unique; its suffix after POD- or CELL- equals the
     initials of its full name (Naming Standard R15: words that start with a lower-case letter
     are skipped, a hyphenated word counts once, a final single capital letter counts);
+    the Chief of Staff Cell, marked code_rule "R16", takes COS and the AIOC's initials instead
+    (Naming Standard R16, item 2; 49GAION/DR-0028);
   - versions: the parts block's defaults.card_version equals the §1 card's card_version, its
     defaults.test_version equals the §1 fixed_test.version, and the §1 blueprint_version
     equals the metadata block's.
@@ -31,7 +33,7 @@ from referencing import Registry, Resource
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 BP = ROOT / "blueprint" / "OER-BLUEPRINT.md"
 AIOC = "[ORG]AIOC-OER"
-WITHDRAWN = []  # no withdrawn codes at v0.1.0
+WITHDRAWN = ["[ORG]CELL-OERCS"]  # retired codes, never issued again (R5); [ORG]CELL-OERCS retired at v0.1.1 for [ORG]CELL-COSOER (R16)
 
 
 class NoAlias(yaml.SafeDumper):
@@ -84,7 +86,7 @@ def unit_card(entry, kind, d):
             "parent": entry.get("parent", AIOC),
             "accountable_to": entry.get("accountable_to", d["accountable_to"]),
             "type": entry["type"], "card_version": d["card_version"], "version": d["version"],
-            "lineage": {"id": code, "version": d["version"], "relation": "original"},
+            "lineage": entry.get("lineage", {"id": code, "version": d["version"], "relation": "original"}),
             "lifecycle_state": d["lifecycle_state"],
             "fixed_test": {"id": test["id"], "version": d["test_version"], "owner": test.get("owner", d["test_owner"])}}
     if kind == "CELL":
@@ -193,6 +195,11 @@ def main(schema_dir):
         errors.append(f"{code}: the code is used by {codes.count(code)} parts; codes are unique across Pods and Cells")
     for kind, e in entries:
         suffix = tail(e["code"]).split("-", 1)[1]
+        if e.get("code_rule") == "R16":  # Naming Standard R16, item 2 (49GAION/DR-0028)
+            if kind != "CELL" or e.get("cell_kind") != "chief-of-staff-cell" or e.get("role") != "Chief of Staff" \
+                    or suffix != "COS" + tail(AIOC).split("-", 1)[1]:
+                errors.append(f"{e['code']}: R16: a Chief of Staff Cell takes COS and the initials of {AIOC}")
+            continue
         if suffix != initials(e["full_name"]):
             errors.append(f"{e['code']}: R15: the suffix {suffix} is not the initials {initials(e['full_name'])} of '{e['full_name']}'")
     named = set(codes) | {aioc.get(k) for k in ("code", "top_cell", "label_holder", "accountable_to")} | set(aioc.get("inner_units", []))
