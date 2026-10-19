@@ -7,5 +7,6 @@ One `DR-####` file per decided subject, numbered in order. A record file never c
 | Record | Date | Subject | Status |
 |---|---|---|---|
 | [`DR-0001`](DR-0001-the-mother-repository-and-its-first-blueprint.md) | 2026-10-17 | The mother repository of the Operations Event Register, and its first mother blueprint | in force on merge |
+| [`DR-0002`](DR-0002-cos-code.md) | 2026-10-19 | Operations Event Register mother v0.1.1: the Chief of Staff takes its COS code | in force on merge |
 
 *Powered by 49GAION*

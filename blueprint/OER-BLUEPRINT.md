@@ -7,7 +7,7 @@ blueprint:
   organisation: "<organisation>"          # filled in each organisation's own copy
   type: "foundational"
   org_aion: "[ORG]AION"
-  blueprint_version: "v0.1.0"
+  blueprint_version: "v0.1.1"
   status: "draft"
   template:
     name: "49GAION AIOC Blueprint Template"
@@ -25,9 +25,9 @@ blueprint:
     functional: ["Capture", "Classification", "Numbering and Chain", "Linking", "Follow-up", "Inbox, Outbox and Projections", "Coverage Feedback", "Feeds to Source Lifecycle", "Evidence and Case Packs", "Integrity", "Surface Connection"]
 ```
 
-# Blueprint · `[ORG]AIOC-OER` · Operations Event Register · `v0.1.0`
+# Blueprint · `[ORG]AIOC-OER` · Operations Event Register · `v0.1.1`
 
-**Draft, 17 October 2026.** **This is the mother blueprint** of the Library part 49GAION Operations Event Register, for any organisation (`49GAION/DR-0027`; `decisions/DR-0001`). It is the part's first blueprint: no instance runs yet, and nothing here has run. Every fixed test reads `NOT_RUN`. Every rule rests on a 49GAION text, cited by section, or is new in this blueprint and marked **New**. Each organisation fills its own copy (§0, §2.1), and its values never come back here.
+**Draft, 17 October 2026. v0.1.1, 19 October 2026: the Chief of Staff takes its COS code `[ORG]CELL-COSOER` (`decisions/DR-0002`).** **This is the mother blueprint** of the Library part 49GAION Operations Event Register, for any organisation (`49GAION/DR-0027`; `decisions/DR-0001`). It is the part's first blueprint: no instance runs yet, and nothing here has run. Every fixed test reads `NOT_RUN`. Every rule rests on a 49GAION text, cited by section, or is new in this blueprint and marked **New**. Each organisation fills its own copy (§0, §2.1), and its values never come back here.
 
 > **The Operations Event Register in one page**
 >
@@ -83,7 +83,7 @@ blueprint:
 | Description | "`[ORG]AIOC-OER` is `<organisation>`'s Operations Event Register core, built from 49GAION Operations Event Register" |
 | Kind | AIOC |
 | Parent | `<code of the Charter of this [ORG]AION>`; the cards use the example code `[ORG]AIOC-CH`. A top-level AIOC, beside Source Lifecycle. A change of parent is the listed type `change-parent` |
-| Inner units | `[ORG]CELL-OERL`, `[ORG]CELL-OERCS`, `[ORG]CELL-OERIC`, `[ORG]POD-OERCR`, `[ORG]POD-OERLF`, `[ORG]POD-OERPF`: three Pods with their six Cells, and three Cells directly under the AIOC (§17). No inner AIOC |
+| Inner units | `[ORG]CELL-OERL`, `[ORG]CELL-COSOER`, `[ORG]CELL-OERIC`, `[ORG]POD-OERCR`, `[ORG]POD-OERLF`, `[ORG]POD-OERPF`: three Pods with their six Cells, and three Cells directly under the AIOC (§17). No inner AIOC |
 | HOAC label | `[ORG]HOAC-ACS`, held by its top Cell, the Operations Event Register Lead `[ORG]CELL-OERL` (`label_holder`) |
 | Accountable to | `<code of the Cell carrying [ORG]HOAC-TM>`; the cards use the example code `[ORG]CELL-TMS` (Naming Standard R15). That Cell signs this AIOC's install, its `change-parent` and its `restart-stopped-unit` (Standard §5.3, item 4; §4.4, item 3) |
 | Type | Foundational: every unit's inbox and outbox, and the feedback to every part, rest on it (§16) |
@@ -93,7 +93,7 @@ blueprint:
 | Made from | the Library part 49GAION Operations Event Register, part card `v1` (DRAFT), and Protocol §22 |
 | Template | 49GAION AIOC Blueprint Template `v1.5.0` at `1abae80`, with the `v1.6.0` additions: the mechanism register and Reserve, checks that are not fixed tests, the added Configuration rows, position codes only, the stages table, the Library's cases, and Done when |
 | Mother | 49GAION Operations Event Register, part card `v1`. This text is its mother blueprint, held in the part's mother repository `github.com/49g-holding/49GAION-operations-event-register` and pinned in the Library register (`49GAION/DR-0024`, `DR-0027`) |
-| Blueprint version and status | `v0.1.0` · draft |
+| Blueprint version and status | `v0.1.1` · draft |
 | Accountable seat (`[ORG]HOAC-ACS`) | the Operations Event Register Lead, `[ORG]CELL-OERL`, a HOAC position. Who occupies it is top management's own mechanism; this AIOC never sees it (Standard §1.1, item 9) |
 | Reports to | the Cell carrying `[ORG]HOAC-TM` |
 | Writing repository | `<org>aioc-oer`, private where it holds the organisation's data. It has two companions: `-records` for the AIOC's own run records, and `-records-restricted` for records that name a person (Naming Standard R9; Protocol §14, item 6). The register itself lives in the runtime's own store, never in a repository (§7) |
@@ -113,10 +113,10 @@ card:
   unit_kind: "AIOC"
   code: "[ORG]AIOC-OER"
   parent: "[ORG]AIOC-CH"                  # example code of the Charter, the root AIOC; only it has parent none (Standard §1.7, item 13)
-  inner_units: ["[ORG]CELL-OERL", "[ORG]CELL-OERCS", "[ORG]CELL-OERIC", "[ORG]POD-OERCR", "[ORG]POD-OERLF", "[ORG]POD-OERPF"]
+  inner_units: ["[ORG]CELL-OERL", "[ORG]CELL-COSOER", "[ORG]CELL-OERIC", "[ORG]POD-OERCR", "[ORG]POD-OERLF", "[ORG]POD-OERPF"]
   type: "foundational"
   org_aion: "[ORG]AION"
-  card_version: "v0.1.0"
+  card_version: "v0.1.1"
   input_door: "Chief of Staff"
   wake: { method: "queue", verified: false }
   receives:
@@ -181,7 +181,7 @@ card:
   anatomy:
     panel: { health: { tests: true, metrics: ["stuck", "returned", "late", "entries registered late", "lag", "number gaps", "census differences", "rebuild differences", "segment anchors missing", "surfaces connected", "surfaces waiting for decisions", "open entries past due", "file requests", "feeds waiting"] } }
     back_office: { converses_with_humans: true, hosts: ["Chief of Staff", "Office"], protocol_traffic: true }
-    definition: { location: "<org>aioc-oer, blueprint/OER-BLUEPRINT.md", version: "v0.1.0" }
+    definition: { location: "<org>aioc-oer, blueprint/OER-BLUEPRINT.md", version: "v0.1.1" }
     delivery: { rollback: "one-click" }
     connectors:
       - { role: "mail system (functional mailboxes)", connector: "surface adapter, one per surface type", access_managed_in: "panel" }   # every grant is signed at the tool gateway as connect-external-port (Protocol §22, item 14)
@@ -194,10 +194,10 @@ card:
       - { role: "calendars of decision bodies", connector: "surface adapter", access_managed_in: "panel" }
     gateway: { metering_id: "<per-AIOC metering id>" }
   full_name: "Operations Event Register"
-  version: "0.1.0"
-  lineage: { id: "[ORG]AIOC-OER", version: "0.1.0", relation: "original" }
+  version: "0.1.1"
+  lineage: { id: "[ORG]AIOC-OER", version: "0.1.1", relation: "original" }
   lifecycle_state: "designed"
-  blueprint_version: "v0.1.0"
+  blueprint_version: "v0.1.1"
   template_version: "v1.5.0"
   accountable_to: "[ORG]CELL-TMS"         # example code of the Cell carrying [ORG]HOAC-TM (Naming Standard R15); never a Cell inside this AIOC
   top_cell: "[ORG]CELL-OERL"
@@ -293,7 +293,7 @@ The blueprint writes `[ORG]` for the organisation's prefix, as central texts do 
 | Position (standard title) | Purpose | Reports to | Run today by | Deputy |
 |---|---|---|---|---|
 | Operations Event Register Lead (HOAC position) | the accountable seat of this AIOC. It signs each surface connection (`connect-external-port`) once the scope and the HF-17 decision are recorded, and revokes. It owns the fixed tests of its parts and rules on what the Chief of Staff raises. It answers for the register, never for the content of what it records | the Cell carrying `[ORG]HOAC-TM` | a HOAC position (`[ORG]HOAC-ACS`). Who occupies it, and how, is top management's own mechanism; this AIOC never sees it. While the position shows no occupant, the Chief of Staff only advises, matters go to the Cell carrying `[ORG]HOAC-TM`, and every act that needs this position's signature waits (Protocol §4.10, item 21) | as top management arranges (`appoint-acting-filler`, Standard §4.1, item 12) |
-| Chief of Staff | keeps the register running and honest; this AIOC's voice to the Lead; the door for file requests, evidence requests and surface connection requests | Operations Event Register Lead | an agent (`[ORG]CELL-OERCS`) | none; requests are held, never closed |
+| Chief of Staff | keeps the register running and honest; this AIOC's voice to the Lead; the door for file requests, evidence requests and surface connection requests | Operations Event Register Lead | an agent (`[ORG]CELL-COSOER`) | none; requests are held, never closed |
 | Capture Clerk | runs the surface adapters, builds each entry, takes its number, chains it, and reconciles the census | Chief of Staff | an agent (`[ORG]CELL-OERCC`) | none; capture waits, and every event is registered late |
 | Classifier | places an ambiguous item in its class, with its reason; sends an item that looks legal or regulatory to the Records Officer position at once | Chief of Staff | an agent (`[ORG]CELL-OERC`) | none; the item is held unclassified and shown |
 | Thread Linker | links each entry to its thread, Work Item, decision, release and source | Chief of Staff | an agent (`[ORG]CELL-OERTL`) | none; the entry stays unlinked and is counted |
@@ -322,7 +322,7 @@ Default.
 #### Role card
 None while the form is a single Chief of Staff.
 #### Fixed test
-TEST-OER-OERCS v1 (TEST-OER v1, case 45) · result `NOT_RUN`
+TEST-OER-COSOER v1 (TEST-OER v1, case 45) · result `NOT_RUN`
 
 ### 4.2 Chief of Staff
 #### Definition
@@ -346,7 +346,7 @@ Default, plus:
 |---|---|
 | Name | Chief of Staff |
 | Position and seat | the position Chief of Staff; accountable seat: the Operations Event Register Lead (`[ORG]HOAC-ACS`) |
-| Performed by | an agent (`[ORG]CELL-OERCS`, full name Operations Event Register Chief of Staff) |
+| Performed by | an agent (`[ORG]CELL-COSOER`, full name Operations Event Register Chief of Staff) |
 | Purpose | keep the register running, whole and honest, and be the door through which positions reach it |
 | Authority limits | **Alone:** dispatch, run code steps, file what a position asks to keep, return evidence packs within scope, refuse a request about one human position, send notices and briefs. **Needs the Lead:** any change to configuration; any act on a surface's grant; a budget above the cap; an item it raised. **Never:** decide, send or refuse an item on its merits; give an order; read a private message or a call; make a figure about one human position; name a person; close an entry by silence; hold a secret |
 | Write location | the event record of this AIOC and its Work Items |
@@ -354,10 +354,10 @@ Default, plus:
 | Escalation | to the Lead in one line, with evidence linked; while the Lead's position is vacant, to the Cell carrying `[ORG]HOAC-TM`; a stop goes to the stop door, never through this Cell |
 | Tools and access | the code steps of the code project; the adapters, through the tool gateway, within their signed scopes; the unit register, read only (positions and arrangements, never occupancy); no credential in any instruction |
 | Deputy and cover | none; on failure, requests are held and the Lead is told |
-| Fixed test and score | TEST-OER-OERCS v1 (§9), plus the default Chief of Staff test (a) to (l) |
+| Fixed test and score | TEST-OER-COSOER v1 (§9), plus the default Chief of Staff test (a) to (l) |
 | Card version and status | v0.1.0 · draft |
 #### Fixed test
-TEST-OER-OERCS v1 · result `NOT_RUN`
+TEST-OER-COSOER v1 · result `NOT_RUN`
 
 ### 4.3 Input socket
 #### Definition
@@ -394,7 +394,7 @@ Default, with this AIOC's standard format, the **admitted event**, which holds:
 #### Process (SOP)
 Default (receive, identify, normalise, check, deliver), run by the Chief of Staff through the socket's code steps and the converters above.
 #### Role card
-Default; performed by the Chief of Staff (`[ORG]CELL-OERCS`) through the socket's code steps.
+Default; performed by the Chief of Staff (`[ORG]CELL-COSOER`) through the socket's code steps.
 #### Fixed test
 TEST-OER v1, cases 2, 4, 17, 47; one case per converter, cases 51 to 60; plus the default Input socket test · result `NOT_RUN`
 
@@ -751,9 +751,9 @@ TEST-OER-OERCA v1 (TEST-OER v1, cases 7, 10, 28, 29, 31, 32) · result `NOT_RUN`
 | Cadence | on request; per period |
 | Measures | feeds waiting; M5 (done with a source) |
 #### Role card
-Performed by the Chief of Staff (`[ORG]CELL-OERCS`, §4.2) for filings, and by the Coverage Analyst (`[ORG]CELL-OERCA`, §5.7) for exports and gap signals.
+Performed by the Chief of Staff (`[ORG]CELL-COSOER`, §4.2) for filings, and by the Coverage Analyst (`[ORG]CELL-OERCA`, §5.7) for exports and gap signals.
 #### Fixed test
-TEST-OER-OERCS v1 and TEST-OER-OERCA v1 (TEST-OER v1, cases 11, 30, 31, 32) · result `NOT_RUN`
+TEST-OER-COSOER v1 and TEST-OER-OERCA v1 (TEST-OER v1, cases 11, 30, 31, 32) · result `NOT_RUN`
 
 ### 5.9 Evidence and Case Packs
 #### Definition
@@ -851,9 +851,9 @@ TEST-OER-OERIC v1 (TEST-OER v1, cases 3, 13, 19, 22, 35, 36) · result `NOT_RUN`
 | Cadence | on request |
 | Measures | surfaces connected; surfaces waiting for decisions |
 #### Role card
-Performed by the Chief of Staff (`[ORG]CELL-OERCS`, §4.2); the signature is the Lead's.
+Performed by the Chief of Staff (`[ORG]CELL-COSOER`, §4.2); the signature is the Lead's.
 #### Fixed test
-TEST-OER-OERL v1 and TEST-OER-OERCS v1 (TEST-OER v1, cases 14, 37, 38, 40) · result `NOT_RUN`
+TEST-OER-OERL v1 and TEST-OER-COSOER v1 (TEST-OER v1, cases 14, 37, 38, 40) · result `NOT_RUN`
 
 ---
 
@@ -939,8 +939,8 @@ The cases are written in `tests/TEST-OER.md`:
 
 | Capability | Test ID and version | Evidence level | Last run | Result |
 |---|---|---|---|---|
-| Office | TEST-OER-OERCS v1 (case 45) | MEASURED | — | `NOT_RUN` |
-| Chief of Staff | TEST-OER-OERCS v1 | MEASURED | — | `NOT_RUN` |
+| Office | TEST-OER-COSOER v1 (case 45) | MEASURED | — | `NOT_RUN` |
+| Chief of Staff | TEST-OER-COSOER v1 | MEASURED | — | `NOT_RUN` |
 | Input socket | TEST-OER v1, cases 2, 4, 17, 47, 51 to 60 | MEASURED | — | `NOT_RUN` |
 | Panel | default; TEST-OER v1, case 46 | MEASURED | — | `NOT_RUN` |
 | Capture | TEST-OER-OERCC v1 | MEASURED | — | `NOT_RUN` |
@@ -1013,7 +1013,7 @@ Money, people and legal matters are marked.
 | H-07 | Each surface's connection, and each widening | the Lead (`connect-external-port`; `grant-or-widen-access`) | the surface is not connected |
 | H-08 | The minimum group size for role-type figures, and the absolute bars of M1 to M8 | the Cell carrying `[ORG]HOAC-TM` | the default size 3; measures shown without a bar |
 | H-09 | **People.** Each outside counterparty has a human owning position (HF-13) | the Cell carrying `[ORG]HOAC-TM` | entries with that party have no owner, and are shown |
-| H-10 | Approve this blueprint `v0.1.0` as the design of `[ORG]AIOC-OER` | the human hub | it stays a draft; nothing is installed |
+| H-10 | Approve this blueprint `v0.1.1` as the design of `[ORG]AIOC-OER` | the human hub | it stays a draft; nothing is installed |
 | H-11 | **Disposal** of entries or data at the end of their term | the position that signs `dispose-records-or-data` (HF-06) | nothing is disposed |
 
 ## 14. Change log
@@ -1021,6 +1021,7 @@ Money, people and legal matters are marked.
 | Blueprint version | Date | Change | Template version | Commit |
 |---|---|---|---|---|
 | v0.1.0 | 2026-10-17 | First mother blueprint of `[ORG]AIOC-OER` on the template, from the Library part 49GAION Operations Event Register v1 and Protocol §22 (`49GAION/DR-0027`): eleven functional capabilities; nine Cells, six in three Pods and three directly under the AIOC; one HOAC position; acts, not activity; TEST-OER v1, 60 cases, with the Library's TEST-OPERATIONS-EVENT-REGISTER v1 kept | v1.5.0 at `1abae80` | this repository, pull request #1 |
+| v0.1.1 | 2026-10-19 | The Chief of Staff takes its COS code: `[ORG]CELL-OERCS` → `[ORG]CELL-COSOER` (Naming Standard R16, `49GAION/DR-0028`; `decisions/DR-0002`). The old code is retired and kept in the card's lineage; the part test is renamed; nothing else changes | v1.5.0 at `1abae80` | this repository's pull request for this version |
 
 ---
 
@@ -1082,7 +1083,7 @@ The parts inside this AIOC (`docs/CELLS-AND-PODS.md` of `49GAION-aioc`). The rol
 | Code | Kind | Type | Filler kind | HOAC label | Parent | Attached to | Fixed test (owner) | External ports |
 |---|---|---|---|---|---|---|---|---|
 | `[ORG]CELL-OERL` | CELL | Human Seat | human | `[ORG]HOAC-ACS` | `[ORG]AIOC-OER` | none | TEST-OER-OERL v1 (the Cell carrying `[ORG]HOAC-TM`) | none |
-| `[ORG]CELL-OERCS` | CELL | AI Chief of Staff | ai | none | `[ORG]AIOC-OER` | none | TEST-OER-OERCS v1 (`[ORG]CELL-OERL`) | `sl-out` (filings, exports and gap signals to Source Lifecycle), through the tool gateway |
+| `[ORG]CELL-COSOER` | CELL | AI Chief of Staff | ai | none | `[ORG]AIOC-OER` | none | TEST-OER-COSOER v1 (`[ORG]CELL-OERL`) | `sl-out` (filings, exports and gap signals to Source Lifecycle), through the tool gateway |
 | `[ORG]CELL-OERIC` | CELL | AI Agent | ai | none | `[ORG]AIOC-OER` | none | TEST-OER-OERIC v1 (`[ORG]CELL-OERL`) | none |
 | `[ORG]POD-OERCR` | POD | AI Pod | — | none | `[ORG]AIOC-OER` | — | TEST-OER-OERCR v1 (`[ORG]CELL-OERL`) | — |
 | `[ORG]CELL-OERCC` | CELL | AI Agent | ai | none | `[ORG]POD-OERCR` | none | TEST-OER-OERCC v1 (`[ORG]CELL-OERL`) | `surface-in` (events of the connected surfaces), `gateway-log-in` (hand-offs and segment roots, read only), through the tool gateway |
@@ -1100,8 +1101,8 @@ The parts inside this AIOC (`docs/CELLS-AND-PODS.md` of `49GAION-aioc`). The rol
 parts:
   defaults:
     accountable_to: "[ORG]CELL-OERL"
-    card_version: "v0.1.0"
-    version: "0.1.0"
+    card_version: "v0.1.1"
+    version: "0.1.1"
     lifecycle_state: "designed"
     test_version: "v1"
     test_owner: "[ORG]CELL-OERL"
@@ -1127,14 +1128,16 @@ parts:
       ai_out: ["direction and configuration"]
       hu_in: ["direction from the Cell carrying [ORG]HOAC-TM", "the formal scope, the HF-17 decision and the notices for a surface"]
       hu_out: ["surface connections and revocations, signed at the tool gateway", "rulings on raised items", "report to the Cell carrying [ORG]HOAC-TM"]
-    - code: "[ORG]CELL-OERCS"
+    - code: "[ORG]CELL-COSOER"
+      code_rule: "R16"                     # 49GAION/DR-0028; replaces [ORG]CELL-OERCS (retired, R5)
+      lineage: { id: "[ORG]CELL-OERCS", version: "0.1.0", relation: "derived" }
       full_name: "Operations Event Register Chief of Staff"
       role: "Chief of Staff"
       parent: "[ORG]AIOC-OER"
       type: "AI Chief of Staff"
       filler_kind: "ai"
       cell_kind: "chief-of-staff-cell"
-      test: { id: "TEST-OER-OERCS", cases: "1, 6, 8, 9, 11, 24, 25, 30, 31, 37, 45, 47, 49, 51 to 60" }
+      test: { id: "TEST-OER-COSOER", cases: "1, 6, 8, 9, 11, 24, 25, 30, 31, 37, 45, 47, 49, 51 to 60" }
       ai_in: ["admitted event", "registration request", "notice from Source Lifecycle", "entry", "integrity finding", "evidence pack", "case pack"]
       ai_out: ["correspondence filing", "dispatch to a Cell", "decision request to the Operations Event Register Lead"]
       hu_in: ["file request", "evidence pack request", "surface connection request", "closure of an entry with its reason", "direction from the Operations Event Register Lead"]
@@ -1177,12 +1180,12 @@ parts:
 - **Engines.** A bot's identity card names no engine; the gateway binds engines per call. Only the Classifier calls a model.
 - **Not Cells of this AIOC:** the Records Officer, the position that holds data protection and the internal-audit line (§2.1, §15).
 
-**Code checks** (Naming Standard R15 and §5), recorded on 17 October 2026. Each code is checked again against the organisation's unit register before first use (R6, R15.3).
+**Code checks** (Naming Standard R15, R16 and §5), recorded on 17 October 2026; the Chief of Staff's COS code on 19 October 2026. Each code is checked again against the organisation's unit register before first use (R6, R15.3).
 
 | Code | Initials of the full name (R15) | §5.1: no `AIOC`, `AION` or `49GAION` | §5.2: no match among the codes checked | §5.3: not a version suffix or misleading acronym | §5.4: recorded before first use |
 |---|---|---|---|---|---|
 | `[ORG]CELL-OERL` | **O**perations **E**vent **R**egister **L**ead → OERL | pass | pass | pass | blueprint §17, 17 October 2026; the organisation's register before first use |
-| `[ORG]CELL-OERCS` | **O**perations **E**vent **R**egister **C**hief of **S**taff → OERCS | pass | pass | pass | as above |
+| `[ORG]CELL-COSOER` | R16, item 2 (`49GAION/DR-0028`): COS and the initials of `[ORG]AIOC-OER` → COSOER. It replaces `[ORG]CELL-OERCS`, retired at v0.1.1 (R5) and kept in the card's lineage | pass | pass (distinct from the COS codes of the other mothers: `COSSL`, `COSPC`, `COSDI`, `COSPPD`, `COSTOM`, `COSCH`) | pass | blueprint §17, 19 October 2026; the organisation's register before first use |
 | `[ORG]CELL-OERIC` | **O**perations **E**vent **R**egister **I**ntegrity **C**hecker → OERIC | pass | pass | pass | as above |
 | `[ORG]POD-OERCR` | **O**perations **E**vent **R**egister **C**apture and **R**egistration → OERCR | pass | pass | pass | as above |
 | `[ORG]CELL-OERCC` | **O**perations **E**vent **R**egister **C**apture **C**lerk → OERCC | pass | pass | pass | as above |
@@ -1354,4 +1357,4 @@ In this order, each step recorded before the next.
 8. **Running.** The Lead switches the surface to running. A new class or purpose on a running surface starts again at step 1.
 9. **Every year.** The internal-audit line reviews the register's use against its stated purpose and fixed list (Protocol §22, item 7).
 
-*`[ORG]AIOC-OER` mother blueprint v0.1.0 · Powered by 49GAION*
+*`[ORG]AIOC-OER` mother blueprint v0.1.1 · Powered by 49GAION*

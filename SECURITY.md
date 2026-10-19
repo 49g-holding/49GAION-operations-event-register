@@ -1,6 +1,6 @@
 # Security
 
-**49GAION Operations Event Register, mother blueprint `v0.1.0` · 17 October 2026.**
+**49GAION Operations Event Register, mother blueprint `v0.1.1` · 19 October 2026.**
 
 - **No secrets.** No password, key, token, seed phrase or one-time code is ever written here, or kept by the register in any entry. Secrets live only in each organisation's vault. The credential IDs in `cards/bots/` are placeholders, never credentials.
 - **No register and no organisation's data.** No entry of any organisation's register, and no value of any organisation, is ever written in this repository or in the 49GAION Library.

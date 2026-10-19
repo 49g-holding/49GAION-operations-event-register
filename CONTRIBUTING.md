@@ -1,6 +1,6 @@
 # Contributing
 
-**49GAION Operations Event Register, mother blueprint `v0.1.0` · 17 October 2026.**
+**49GAION Operations Event Register, mother blueprint `v0.1.1` · 19 October 2026.**
 
 1. **One change, one pull request.** It is reviewed by someone other than its writer, and merged by the governing seat of 49GAION.
 2. **No organisation's data.** Never write here an organisation's name, host, code, document, value, or any entry of its register (Naming Standard R9).
