@@ -2,6 +2,8 @@
 
 The mother repository of the Library part **49GAION Operations Event Register**. In an `[ORG]AION`, the part is the AIOC `[ORG]AIOC-OER`. This repository is public. It holds the mother blueprint only, for any organisation, with no organisation's data (`49GAION/DR-0024`, `DR-0027`; Naming Standard R9, addition 4).
 
+> **Reading (49GAION DR-0041).** The complete definition of 49GAION, approved by its governing seat on 25 October 2026, is `49GAION-FRAMEWORK.md` in `github.com/49g-holding/49GAION`. Where this repository differs from it, the definition governs, and this text is read with it. Every rule here that names `[ORG]AIOC-OCO` or the human hub reads as the Top Management Group, the hub of the operation, human and AI. The panel is the organisation's own code interface, and the AI chat workspace is its back office. The readings are in [`decisions/DR-0003`](decisions/DR-0003-the-readings-of-dr-0041.md). Nothing here is removed.
+
 ## What the part does
 
 The Operations Event Register is the record of an organisation's live operation. It gives every formal act and crossing of the organisation's units and positions, on every surface the organisation connects, one number in one append-only, hash-chained register, by reference to where the content lives.
