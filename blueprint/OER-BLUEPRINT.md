@@ -61,7 +61,7 @@ blueprint:
 > **What it never does**
 > - It decides nothing, sends nothing, and refuses nothing on its merits. The tool gateway gates; the register records.
 > - Nothing on the accountability path ever waits on it, and when it is down, work goes on and is registered late.
-> - **Acts, not activity.** Every act of an AI Cell is recorded, except that a Cell acting for a holder is recorded only for the acts that leave the holder's sphere. Of a human position, only its formal acts are recorded. The register never sweeps a mailbox or a chat. It keeps no read or response times, no presence and no recordings, and never counts, rates or keeps the history of a human position's acts. A human position sees only the live state of its own open items.
+> - **Acts, not activity.** Every act of an AI Cell is recorded, except that a Cell acting for a position is recorded only for the acts that leave the position's sphere. Of a human position, only its formal acts are recorded. The register never sweeps a mailbox or a chat. It keeps no read or response times, no presence and no recordings, and never counts, rates or keeps the history of a human position's acts. A human position sees only the live state of its own open items.
 > - It holds no secret, and never names a person.
 >
 > **Who decides**
@@ -96,7 +96,7 @@ blueprint:
 | Template | 49GAION AIOC Blueprint Template `v1.5.0` at `1abae80`, with the `v1.6.0` additions: the mechanism register and Reserve, checks that are not fixed tests, the added Configuration rows, position codes only, the stages table, the Library's cases, and Done when |
 | Mother | 49GAION Operations Event Register, part card `v1`. This text is its mother blueprint, held in the part's mother repository `github.com/49g-holding/49GAION-operations-event-register` and pinned in the Library register (`49GAION/DR-0024`, `DR-0027`) |
 | Blueprint version and status | `v0.1.1` · draft |
-| Accountable seat (`[ORG]HOAC-ACS`) | the Operations Event Register Lead, `[ORG]CELL-OERL`, a HOAC position. Who occupies it is top management's own mechanism; this AIOC never sees it (Standard §1.1, item 9) |
+| Accountable seat (`[ORG]HOAC-ACS`) | the Operations Event Register Lead, `[ORG]CELL-OERL`, a HOAC position. Who holds it is the organisation's own mechanism, outside the system; this AIOC never sees it (Standard §1.1, item 9) |
 | Reports to | the Cell carrying `[ORG]HOAC-TM` |
 | Writing repository | `<org>aioc-oer`, private where it holds the organisation's data. It has two companions: `-records` for the AIOC's own run records, and `-records-restricted` for records that name a person (Naming Standard R9; Protocol §14, item 6). The register itself lives in the runtime's own store, never in a repository (§7) |
 | Code project | `<org>aioc-oer`, on the organisation's code platform: the adapters, the register's store and its projections |
@@ -281,7 +281,7 @@ The blueprint writes `[ORG]` for the organisation's prefix, as central texts do 
   | Provenance (Protocol §8) | checks after the fact whether an act cited a valid source | edits a Work Item or a source |
   | `[ORG]AIOC-SL` (Protocol §13): content and sources | files what a position asks to keep, the activity export and gap signals; reads references only of the sources its entries cite, under its signed grant (Protocol §13, item 12) | reads or holds content; serves a source |
   | Panels, built by `[ORG]AIOC-OCO` (Standard §5.3, item 5) | serves projections as portals (Protocol §14, item 2) | builds a Panel or an HU route |
-  | The unit register | reads the `position` and `arrangement` entries of each unit and position | writes it, or reads an occupancy or handover entry |
+  | The unit register | reads the `position` entries of each unit and position | writes it, or reads anything about who holds a position |
   | Self-Improvement, in `[ORG]HOAC-TM` (Standard §2) | gives evidence and shadow-run case packs, pseudonymised, once `[ORG]HOAC-TM` adds the register to the process's access (§2.1, items 7 and 8) | becomes its only path (§2.1, item 7); gives it entries of the accountability path or golden-set cases; grades a unit (§2.3, item 9) |
   | The internal-audit line (HF-19) and the Outside Inspector | is read by them directly, read only | audits, inspects, or becomes the internal-audit line |
   | The watchdog (Protocol §4.6, item 5) | shows what is due and overdue | chases, gives orders, or escalates in its own name |
@@ -292,9 +292,9 @@ The blueprint writes `[ORG]` for the organisation's prefix, as central texts do 
 
 ## 3. Positions
 
-| Position (standard title) | Purpose | Reports to | Run today by | Deputy |
+| Position (standard title) | Purpose | Reports to | Run today by | Cover |
 |---|---|---|---|---|
-| Operations Event Register Lead (HOAC position) | the accountable seat of this AIOC. It signs each surface connection (`connect-external-port`) once the scope and the HF-17 decision are recorded, and revokes. It owns the fixed tests of its parts and rules on what the Chief of Staff raises. It answers for the register, never for the content of what it records | the Cell carrying `[ORG]HOAC-TM` | a HOAC position (`[ORG]HOAC-ACS`). Who occupies it, and how, is top management's own mechanism; this AIOC never sees it. While the position shows no occupant, the Chief of Staff only advises, matters go to the Cell carrying `[ORG]HOAC-TM`, and every act that needs this position's signature waits (Protocol §4.10, item 21) | as top management arranges (`appoint-acting-filler`, Standard §4.1, item 12) |
+| Operations Event Register Lead (HOAC position) | the accountable seat of this AIOC. It signs each surface connection (`connect-external-port`) once the scope and the HF-17 decision are recorded, and revokes. It owns the fixed tests of its parts and rules on what the Chief of Staff raises. It answers for the register, never for the content of what it records | the Cell carrying `[ORG]HOAC-TM` | a HOAC position (`[ORG]HOAC-ACS`). Who holds it, and how, is the organisation's own mechanism, outside the system; this AIOC never sees it. While the position is empty (no credential in force for it), the Chief of Staff only advises, matters go to the Cell carrying `[ORG]HOAC-TM`, and every act that needs this position's signature waits (Protocol §4.10, item 21) | the organisation's own mechanism, outside the system |
 | Chief of Staff | keeps the register running and honest; this AIOC's voice to the Lead; the door for file requests, evidence requests and surface connection requests | Operations Event Register Lead | an agent (`[ORG]CELL-COSOER`) | none; requests are held, never closed |
 | Capture Clerk | runs the surface adapters, builds each entry, takes its number, chains it, and reconciles the census | Chief of Staff | an agent (`[ORG]CELL-OERCC`) | none; capture waits, and every event is registered late |
 | Classifier | places an ambiguous item in its class, with its reason; sends an item that looks legal or regulatory to the Records Officer position at once | Chief of Staff | an agent (`[ORG]CELL-OERC`) | none; the item is held unclassified and shown |
@@ -354,7 +354,7 @@ Default, plus:
 | Write location | the event record of this AIOC and its Work Items |
 | Reports to | the Operations Event Register Lead |
 | Escalation | to the Lead in one line, with evidence linked; while the Lead's position is vacant, to the Cell carrying `[ORG]HOAC-TM`; a stop goes to the stop door, never through this Cell |
-| Tools and access | the code steps of the code project; the adapters, through the tool gateway, within their signed scopes; the unit register, read only (positions and arrangements, never occupancy); no credential in any instruction |
+| Tools and access | the code steps of the code project; the adapters, through the tool gateway, within their signed scopes; the unit register, read only (positions only, never who holds them); no credential in any instruction |
 | Deputy and cover | none; on failure, requests are held and the Lead is told |
 | Fixed test and score | TEST-OER-COSOER v1 (§9), plus the default Chief of Staff test (a) to (l) |
 | Card version and status | v0.1.0 · draft |
@@ -649,7 +649,7 @@ TEST-OER-OERFC v1 (TEST-OER v1, cases 9, 24, 25) · result `NOT_RUN`
 | Field | Content |
 |---|---|
 | Name | Inbox, Outbox and Projections |
-| What it is | Every unit and position has an inbox and an outbox: Panel views of the entries at its ports, with what is open and what is due. Two further projections are built from the same events. The handover list holds a position's open entries and commitments, ready for top management's handover entry when the occupant changes. The return brief holds what arrived for a position while it was away, and what is due. Both are built only on request, and the register never knows who occupies a position. |
+| What it is | Every unit and position has an inbox and an outbox: Panel views of the entries at its ports, with what is open and what is due. Two further projections are built from the same events. The handover list holds a position's open entries and commitments, built on request of that position or of the HOAC above it. The return brief holds what arrived for a position while it was away, and what is due. Both are built only on request, and the register never knows who occupies a position. |
 | Purpose | Let every part see its own traffic, and let a position be taken over without losing anything. |
 | Scope | does: build each projection from the events, with the version of the logic that built it; show each position only its own open items; does not: show a measure of a human position; show anyone's activity; hold a copy (Protocol §14, item 2) |
 | Inputs | the events |
@@ -662,7 +662,7 @@ TEST-OER-OERFC v1 (TEST-OER v1, cases 9, 24, 25) · result `NOT_RUN`
 | Field | Content |
 |---|---|
 | Trigger | a new event; a request from the Panel; a request for a position's handover list, from that position or from the Cell carrying `[ORG]HOAC-TM`; a position's request for its return brief |
-| Steps | 1. **Projection Builder**: rebuild the affected projections → *projection* (with its logic version). 2. **Projection Builder**: on request, build the position's handover list: its open entries and commitments, for top management's handover entry. It never reads an occupancy or handover entry (Protocol §4.10, item 17) → *handover list*. 3. **Projection Builder**: when a position asks, build its return brief → *return brief*. |
+| Steps | 1. **Projection Builder**: rebuild the affected projections → *projection* (with its logic version). 2. **Projection Builder**: on request, build the position's handover list: its open entries and commitments. It reads nothing about who holds a position (Protocol §22, item 12) → *handover list*. 3. **Projection Builder**: when a position asks, build its return brief → *return brief*. |
 | States | current / rebuilding |
 | Failure and recovery | a projection that fails its rebuild check shows its last good rebuild time and is a finding (§5.10) |
 | Records | none of their own; projections are rebuilt |
@@ -880,7 +880,7 @@ TEST-OER-OERL v1 and TEST-OER-COSOER v1 (TEST-OER v1, cases 14, 37, 38, 40) · r
 | Outside parties' particulars | the restricted partition, by ID, under keyed hashes (Protocol §14, item 6) | never in an entry, a projection or a search index |
 | Correspondence a position asked to keep | Source Lifecycle, as a source of origin kind `correspondence` | one home |
 | Connections, scope changes and revocations | the unit register, append-only | one home |
-| The link between positions and the natural persons who occupy them | not in this AIOC: top management's own mechanism (Standard §1.1, item 9) | never here |
+| The link between positions and the natural persons who hold them | not in this AIOC: the organisation's own mechanism, outside the system (Standard §1.1, item 9) | never here |
 | Secrets | the organisation's vault only | never written |
 
 ## 8. Tools and the shared AI gateway
@@ -1006,7 +1006,7 @@ Money, people and legal matters are marked.
 
 | ID | Decision | Who decides | Effect while open |
 |---|---|---|---|
-| H-01 | **Top management's own mechanism.** Arrange the Lead position (`[ORG]CELL-OERL`) and set the positions of §15 (Records Officer, data protection, internal-audit line). Nothing of who occupies them enters this blueprint | the Cell carrying `[ORG]HOAC-TM` | the position is vacant: the Chief of Staff only advises; no surface can be signed |
+| H-01 | **The positions, and the organisation's own mechanism.** Set the positions of §15 (Records Officer, data protection, internal-audit line). Who holds them and the Lead position (`[ORG]CELL-OERL`), and how, is decided outside the system (`49GAION/DR-0048`, `DR-0049`); nothing of it enters this blueprint | the Cell carrying `[ORG]HOAC-TM`, for the positions | the position is empty: the Chief of Staff only advises; no surface can be signed |
 | H-02 | **The formal scope**: which surfaces, entities and classes of act are formal, the stated purpose, and whether registering is compulsory (Annex A) | the Cell carrying `[ORG]HOAC-TM` | no surface can be requested |
 | H-03 | **Legal; people.** For each surface and entity: the impact assessment, the lawful basis (never staff consent), the staff notice, consultation or co-determination where it exists, and the privacy notices for outside parties (Annex F) | the position that holds data protection (HF-17), with the legal position | the surface is not connected |
 | H-04 | **Legal.** Between entities: the intra-group arrangement and, where needed, a lawful transfer mechanism; information barriers between regulated entities | the Cell carrying `[ORG]HOAC-GOV` | no crossing between entities is read across |
@@ -1237,7 +1237,7 @@ The codes checked against:
 | Calendars; calls | meetings of decision bodies, with the link to their minutes; a call only as an approved note | recordings, transcripts, personal calendars, attendance |
 | The whistleblowing channel | nothing | everything, counts included |
 
-**Positions that act for a holder** (a Chief of Staff, an attached assistant, a duty deputy) mirror a human position. For them the register records only the acts that leave the holder's sphere: Work Items sent, signed actions carried out, formal outgoing items. It never records the exchange between the holder and its assistant. Their measures go to the holder only.
+**Cells that act for a position** (a Chief of Staff, an attached assistant, a duty deputy) mirror a human position. For them the register records only the acts that leave the position's sphere: Work Items sent, signed actions carried out, formal outgoing items. It never records the exchange between the position and its assistant. Their measures go to the position only.
 
 ## Annex B. The register entry
 
