@@ -28,7 +28,7 @@ The one-page summary is at the top of the blueprint.
 
 | Path | What it is |
 |---|---|
-| [`blueprint/OER-BLUEPRINT.md`](blueprint/OER-BLUEPRINT.md) | the mother blueprint, `v0.1.1`, on the 49GAION AIOC template |
+| [`blueprint/OER-BLUEPRINT.md`](blueprint/OER-BLUEPRINT.md) | the mother blueprint, `v0.1.2`, on the 49GAION AIOC template |
 | [`tests/TEST-OER.md`](tests/TEST-OER.md) | the fixed test, TEST-OER v1: 60 cases, every one `NOT_RUN`, with the Library's TEST-OPERATIONS-EVENT-REGISTER v1 kept as cases 1 to 16 |
 | [`cards/`](cards/) | the unit cards of its Pods and Cells, and the bot identity cards, generated from blueprint §17 |
 | [`decisions/`](decisions/) | the decision records of this repository |
