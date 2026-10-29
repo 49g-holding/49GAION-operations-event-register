@@ -7,7 +7,7 @@ blueprint:
   organisation: "<organisation>"          # filled in each organisation's own copy
   type: "foundational"
   org_aion: "[ORG]AION"
-  blueprint_version: "v0.1.2"
+  blueprint_version: "v0.1.3"
   status: "draft"
   template:
     name: "49GAION AIOC Blueprint Template"
@@ -25,7 +25,7 @@ blueprint:
     functional: ["Capture", "Classification", "Numbering and Chain", "Linking", "Follow-up", "Inbox, Outbox and Projections", "Coverage Feedback", "Feeds to Source Lifecycle", "Evidence and Case Packs", "Integrity", "Surface Connection"]
 ```
 
-# Blueprint · `[ORG]AIOC-OER` · Operations Event Register · `v0.1.2`
+# Blueprint · `[ORG]AIOC-OER` · Operations Event Register · `v0.1.3`
 
 **Draft, 17 October 2026. v0.1.1, 19 October 2026: the Chief of Staff takes its COS code `[ORG]CELL-COSOER` (`decisions/DR-0002`).** **This is the mother blueprint** of the Library part 49GAION Operations Event Register, for any organisation (`49GAION/DR-0027`; `decisions/DR-0001`). It is the part's first blueprint: no instance runs yet, and nothing here has run. Every fixed test reads `NOT_RUN`. Every rule rests on a 49GAION text, cited by section, or is new in this blueprint and marked **New**. Each organisation fills its own copy (§0, §2.1), and its values never come back here.
 
@@ -95,7 +95,7 @@ blueprint:
 | Made from | the Library part 49GAION Operations Event Register, part card `v1` (DRAFT), and Protocol §22 |
 | Template | 49GAION AIOC Blueprint Template `v1.5.0` at `1abae80`, with the `v1.6.0` additions: the mechanism register and Reserve, checks that are not fixed tests, the added Configuration rows, position codes only, the stages table, the Library's cases, and Done when |
 | Mother | 49GAION Operations Event Register, part card `v1`. This text is its mother blueprint, held in the part's mother repository `github.com/49g-holding/49GAION-operations-event-register` and pinned in the Library register (`49GAION/DR-0024`, `DR-0027`) |
-| Blueprint version and status | `v0.1.2` · draft |
+| Blueprint version and status | `v0.1.3` · draft |
 | Accountable seat (`[ORG]HOAC-ACS`) | the Operations Event Register Lead, `[ORG]CELL-OERL`, a HOAC position. Who holds it is the organisation's own mechanism, outside the system; this AIOC never sees it (Standard §1.1, item 9) |
 | Reports to | the Cell carrying `[ORG]HOAC-TM` |
 | Writing repository | `<org>aioc-oer`, private where it holds the organisation's data. It has two companions: `-records` for the AIOC's own run records, and `-records-restricted` for records that name a person (Naming Standard R9; Protocol §14, item 6). The register itself lives in the runtime's own store, never in a repository (§7) |
@@ -118,7 +118,7 @@ card:
   inner_units: ["[ORG]CELL-OERL", "[ORG]CELL-COSOER", "[ORG]CELL-OERIC", "[ORG]POD-OERCR", "[ORG]POD-OERLF", "[ORG]POD-OERPF"]
   type: "foundational"
   org_aion: "[ORG]AION"
-  card_version: "v0.1.2"
+  card_version: "v0.1.3"
   input_door: "Chief of Staff"
   wake: { method: "queue", verified: false }
   receives:
@@ -183,7 +183,7 @@ card:
   anatomy:
     panel: { health: { tests: true, metrics: ["stuck", "returned", "late", "entries registered late", "lag", "number gaps", "census differences", "rebuild differences", "segment anchors missing", "surfaces connected", "surfaces waiting for decisions", "open entries past due", "file requests", "feeds waiting"] } }
     back_office: { converses_with_humans: true, hosts: ["Chief of Staff", "Office"], protocol_traffic: true }
-    definition: { location: "<org>aioc-oer, blueprint/OER-BLUEPRINT.md", version: "v0.1.2" }
+    definition: { location: "<org>aioc-oer, blueprint/OER-BLUEPRINT.md", version: "v0.1.3" }
     delivery: { rollback: "one-click" }
     connectors:
       - { role: "mail system (functional mailboxes)", connector: "surface adapter, one per surface type", access_managed_in: "panel" }   # every grant is signed at the tool gateway as connect-external-port (Protocol §22, item 14)
@@ -196,10 +196,10 @@ card:
       - { role: "calendars of decision bodies", connector: "surface adapter", access_managed_in: "panel" }
     gateway: { metering_id: "<per-AIOC metering id>" }
   full_name: "Operations Event Register"
-  version: "0.1.2"
+  version: "0.1.3"
   lineage: { id: "[ORG]AIOC-OER", version: "0.1.2", relation: "original" }
   lifecycle_state: "designed"
-  blueprint_version: "v0.1.2"
+  blueprint_version: "v0.1.3"
   template_version: "v1.5.0"
   accountable_to: "[ORG]CELL-TMS"         # example code of the Cell carrying [ORG]HOAC-TM (Naming Standard R15); never a Cell inside this AIOC
   top_cell: "[ORG]CELL-OERL"
@@ -1015,7 +1015,7 @@ Money, people and legal matters are marked.
 | H-07 | Each surface's connection, and each widening | the Lead (`connect-external-port`; `grant-or-widen-access`) | the surface is not connected |
 | H-08 | The minimum group size for role-type figures, and the absolute bars of M1 to M8 | the Cell carrying `[ORG]HOAC-TM` | the default size 3; measures shown without a bar |
 | H-09 | **People.** Each outside counterparty has a human owning position (HF-13) | the Cell carrying `[ORG]HOAC-TM` | entries with that party have no owner, and are shown |
-| H-10 | Approve this blueprint `v0.1.2` as the design of `[ORG]AIOC-OER` | the human hub | it stays a draft; nothing is installed |
+| H-10 | Approve this blueprint `v0.1.3` as the design of `[ORG]AIOC-OER` | the human hub | it stays a draft; nothing is installed |
 | H-11 | **Disposal** of entries or data at the end of their term | the position that signs `dispose-records-or-data` (HF-06) | nothing is disposed |
 
 ## 14. Change log
@@ -1025,6 +1025,7 @@ Money, people and legal matters are marked.
 | v0.1.0 | 2026-10-17 | First mother blueprint of `[ORG]AIOC-OER` on the template, from the Library part 49GAION Operations Event Register v1 and Protocol §22 (`49GAION/DR-0027`): eleven functional capabilities; nine Cells, six in three Pods and three directly under the AIOC; one HOAC position; acts, not activity; TEST-OER v1, 60 cases, with the Library's TEST-OPERATIONS-EVENT-REGISTER v1 kept | v1.5.0 at `1abae80` | this repository, pull request #1 |
 | v0.1.1 | 2026-10-19 | The Chief of Staff takes its COS code: `[ORG]CELL-OERCS` → `[ORG]CELL-COSOER` (Naming Standard R16, `49GAION/DR-0028`; `decisions/DR-0002`). The old code is retired and kept in the card's lineage; the part test is renamed; nothing else changes | v1.5.0 at `1abae80` | this repository's pull request for this version |
 | v0.1.2 | 2026-10-29 | Released on the governing seat's word (`decisions/DR-0005`): it carries the records since v0.1.1, `decisions/DR-0003`, `decisions/DR-0004`; positions only (`49GAION/DR-0048`, `DR-0049`). Every card takes v0.1.2; the Protocol pin moves to the Operating Protocol `v2.1.0`. No other rule changes. |
+| v0.1.3 | 2026-10-29 | Corrections under `49GAION/DR-0052` (`decisions/DR-0006`): the gateway runs as code beside the core, outside the reach of every AI. Every card takes v0.1.3. The Protocol pin moves to the Operating Protocol `v2.2.0`. No rule of this part is added or dropped. |
 
 ---
 
@@ -1104,8 +1105,8 @@ The parts inside this AIOC (`docs/CELLS-AND-PODS.md` of `49GAION-aioc`). The rol
 parts:
   defaults:
     accountable_to: "[ORG]CELL-OERL"
-    card_version: "v0.1.2"
-    version: "0.1.2"
+    card_version: "v0.1.3"
+    version: "0.1.3"
     lifecycle_state: "designed"
     test_version: "v1"
     test_owner: "[ORG]CELL-OERL"
@@ -1360,4 +1361,4 @@ In this order, each step recorded before the next.
 8. **Running.** The Lead switches the surface to running. A new class or purpose on a running surface starts again at step 1.
 9. **Every year.** The internal-audit line reviews the register's use against its stated purpose and fixed list (Protocol §22, item 7).
 
-*`[ORG]AIOC-OER` mother blueprint v0.1.2 · Powered by 49GAION*
+*`[ORG]AIOC-OER` mother blueprint v0.1.3 · Powered by 49GAION*
