@@ -1,8 +1,8 @@
 # Contributing
 
-**49GAION Operations Event Register, mother blueprint `v0.1.2` · 29 October 2026.**
+**49GAION Operations Event Register, mother blueprint `v0.1.3` · 29 October 2026.**
 
-1. **One change, one pull request.** It is reviewed by someone other than its writer, and merged by the governing seat of 49GAION.
+1. **One change, one pull request.** It is reviewed by a party other than its writer, and merged by the governing seat of 49GAION.
 2. **No organisation's data.** Never write here an organisation's name, host, code, document, value, or any entry of its register (Naming Standard R9).
 3. **No tool names.** Surfaces are named by role only; product names appear only in an organisation's own copy (Protocol §10, item 5).
 4. **Positions, never people.** No person's name, initials or personal ID in any file.

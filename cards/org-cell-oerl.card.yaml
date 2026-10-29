@@ -5,11 +5,11 @@ full_name: Operations Event Register Lead
 parent: '[ORG]AIOC-OER'
 accountable_to: '[ORG]CELL-TMS'
 type: Human Seat
-card_version: v0.1.2
-version: 0.1.2
+card_version: v0.1.3
+version: 0.1.3
 lineage:
   id: '[ORG]CELL-OERL'
-  version: 0.1.2
+  version: 0.1.3
   relation: original
 lifecycle_state: designed
 fixed_test:

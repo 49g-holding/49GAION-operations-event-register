@@ -2,15 +2,16 @@
 
 | Item | State |
 |---|---|
-| Mother blueprint | `v0.1.2`, draft (29 October 2026): the release of the records since `v0.1.1`, positions only among them (`decisions/DR-0005`). It builds on `v0.1.1`, draft (19 October 2026): the Chief of Staff takes its COS code, `[ORG]CELL-OERCS` → `[ORG]CELL-COSOER` (`decisions/DR-0002`; Naming Standard R16). It builds on `v0.1.0`, draft (17 October 2026), the part's first blueprint (`decisions/DR-0001`; `49GAION/DR-0027`) |
+| Mother blueprint | `v0.1.3`, draft (29 October 2026): corrections under `49GAION/DR-0052` (`decisions/DR-0006`). It builds on `v0.1.2`, draft (29 October 2026): the release of the records since `v0.1.1`, positions only among them (`decisions/DR-0005`). It builds on `v0.1.1`, draft (19 October 2026): the Chief of Staff takes its COS code, `[ORG]CELL-OERCS` → `[ORG]CELL-COSOER` (`decisions/DR-0002`; Naming Standard R16). It builds on `v0.1.0`, draft (17 October 2026), the part's first blueprint (`decisions/DR-0001`; `49GAION/DR-0027`) |
 | Template | 49GAION AIOC Blueprint Template `v1.5.0` at `1abae80`, with the unreleased `v1.6.0` additions on main |
 | Library part | 49GAION Operations Event Register, part card `v1` (`DRAFT`, `NOT_RUN`); Protocol §22 |
-| Library pin | `v0.1.1` at `e7c352b`; `v0.1.2` is pinned in `49GAION-protocol` `library/README.md` once this text is merged |
+| Library pin | `v0.1.2` at `d44e4fc`; `v0.1.3` is pinned in `49GAION-protocol` `library/README.md` once this text is merged |
 | Fixed test | TEST-OER v1: 60 cases · `NOT_RUN`; the Library's TEST-OPERATIONS-EVENT-REGISTER v1 (16 cases) kept as cases 1 to 16 |
 | Unit cards | 12 Pod and Cell cards, generated from blueprint §17. `tools/make_cards.py` against `49GAION-protocol` `spec/schemas` on main, 19 October 2026: **0 errors** |
 | Bot identity cards | 8, one for each AI Cell; none signs; no shared credential; **0 errors** |
 | Organisation names | `no-org-names` scanner of `49GAION-protocol`, 17 October 2026: **0 hits** |
 | Instances | none yet |
 | Readings | `49GAION/DR-0041`, the complete definition of 49GAION: this repository is read with it (`decisions/DR-0003`), released in `v0.1.2` |
+| On `main` since the release | none: `v0.1.3` is the release |
 
 *Powered by 49GAION*
