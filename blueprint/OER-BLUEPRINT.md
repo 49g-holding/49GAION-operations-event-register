@@ -262,7 +262,7 @@ The blueprint writes `[ORG]` for the organisation's prefix, as central texts do 
 | The internal-audit line (HF-19) | `<position code>` |
 | The engineering division | `<to be set by the human hub>`: builds the adapters and the store |
 | The IT and infrastructure division | `<filled>` (the vault, the tool gateway's hosting, the register's store) |
-| The tool gateway | held in the Charter (Standard §4.4, item 11). Every surface connection, every register-first issue and every stop passes through it |
+| The tool gateway | carried by the Charter and run as code beside the core, outside the reach of every AI (Standard §4.4, item 11; `49GAION/DR-0052`). Every surface connection, every register-first issue and every stop passes through it |
 
 ### 2.2 Placement
 
